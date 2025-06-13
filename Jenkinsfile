@@ -1,7 +1,5 @@
 pipeline{
-    agent{  
-         any       
-    }
+    agent any      
     environment {
         APP_NAME = "hello-world"
         RELEASE_NUMBER = "1.0"
