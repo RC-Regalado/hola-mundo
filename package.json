@@ -1,0 +1,18 @@
+{
+  "name": "hello-express",
+  "version": "1.0.0",
+  "description": "Hello World Express App",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.21",
+    "typescript": "^5.3.3"
+  }
+}
