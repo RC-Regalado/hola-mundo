@@ -32,5 +32,5 @@ COPY --from=dev ./usr/src/app/package*.json ./
 
 
 
-CMD ["npm","run","start:prod"]
+CMD ["npm","run","start"]
 
