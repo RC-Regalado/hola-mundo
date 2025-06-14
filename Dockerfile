@@ -17,7 +17,6 @@ WORKDIR /usr/src/app/
 
 COPY --from=builder ./usr/src/app/package*.json ./ 
 COPY  --from=builder ./usr/src/app/dist ./dist
-COPY --from=builder ./usr/src/app/.npmrc ./
 
 RUN pnpm install --production \
   && pnpm prune --prod
