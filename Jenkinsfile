@@ -15,7 +15,7 @@ pipeline{
           steps{
             echo 'Docker build app'
             script{
-                    docker.withRegistry(${SERVER}, 'nexus-regalado' ) {
+                    docker.withRegistry("http://${SERVER}", 'nexus-regalado' ) {
                             docker_image = docker.build "${IMAGE_NAME}"
                             docker_image.push("${IMAGE_TAG}")
                             docker_image.push("latest")
