@@ -26,7 +26,7 @@ pipeline{
             script{
                     docker.withRegistry("http://${SERVER}", 'nexus-regalado' ) {
                             docker_image = docker.build "${IMAGE_NAME}"
-                            docker_image.push("${IMAGE_TAG}-${COMMIT_HASH}")
+                            docker_image.push("${COMMIT_HASH}")
                             docker_image.push("latest")
               }
             }
