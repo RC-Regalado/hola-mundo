@@ -51,7 +51,6 @@ pipeline{
                     sh """
                         docker run -d --restart=always \
                             --name ${APP_NAME} \
-                            --network app_network \
                             -p 6000:6000 \
                             ${SERVER}/${IMAGE_NAME}:${COMMIT_HASH}
                     """
