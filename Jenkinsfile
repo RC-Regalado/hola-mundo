@@ -53,7 +53,7 @@ pipeline{
                             --name ${IMAGE_NAME} \
                             --network app_network \
                             -p 6000:6000 \
-                            ${REGISTRY}/${IMAGE_NAME}:${COMMIT_HASH}
+                            ${IMAGE_NAME}:${COMMIT_HASH}
                     """
                 }
             }
