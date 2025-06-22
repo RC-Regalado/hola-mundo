@@ -41,8 +41,8 @@ pipeline{
                     if (exists) {
                         echo "Contenedor existe. Actualizando..."
                         sh """
-                            docker stop ${IMAGE_NAME} || true
-                            docker rm ${IMAGE_NAME} || true
+                            docker stop ${APP_NAME} || true
+                            docker rm ${APP_NAME} || true
                         """
                     } else {
                         echo "Contenedor no existe. Creando nuevo..."
