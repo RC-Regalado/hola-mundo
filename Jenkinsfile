@@ -36,7 +36,7 @@ pipeline{
             steps {
                 script {
                     // Verifica si ya se está ejecutando el contenedor
-                    def exists = sh(script: "docker ps -a --format '{{.Names}}' | grep -w ${IMAGE_NAME}", returnStatus: true) == 0
+                    def exists = sh(script: "docker ps -a --format '{{.Names}}' | grep -w ${APP_NAME}", returnStatus: true) == 0
 
                     if (exists) {
                         echo "Contenedor existe. Actualizando..."
