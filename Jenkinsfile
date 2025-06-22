@@ -26,7 +26,7 @@ pipeline{
             script{
                     docker.withRegistry("http://${SERVER}", 'nexus-regalado' ) {
                             docker_image = docker.build "${IMAGE_NAME}"
-                            docker_image.push("${IMAGE_TAG}-${COMMIT_HASH}")
+                            docker_image.push("${COMMIT_HASH}")
                             docker_image.push("latest")
               }
             }
@@ -50,10 +50,10 @@ pipeline{
 
                     sh """
                         docker run -d --restart=always \
-                            --name ${IMAGE_NAME} \
+                            --name ${APP_NAME} \
                             --network app_network \
                             -p 6000:6000 \
-                            ${SERVER}/${IMAGE_NAME}:${IMAGE_TAG}-${COMMIT_HASH}
+                            ${SERVER}/${IMAGE_NAME}:${COMMIT_HASH}
                     """
                 }
             }
