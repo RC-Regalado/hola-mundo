@@ -51,7 +51,7 @@ pipeline{
                     sh """
                         docker run -d --restart=always \
                             --name ${APP_NAME} \
-                            -p 8001:6000 \
+                            -p 8001:8001 \
                             ${SERVER}/${IMAGE_NAME}:${COMMIT_HASH}
                     """
                 }
