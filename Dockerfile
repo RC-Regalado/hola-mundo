@@ -31,6 +31,5 @@ COPY --from=dev  ./usr/src/app/node_modules ./node_modules
 COPY --from=dev ./usr/src/app/package*.json ./
 
 
-
 CMD ["npm","run","start"]
 
